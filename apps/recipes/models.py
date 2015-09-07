@@ -11,6 +11,10 @@ class Ingredient(ArchiveMixin):
     name = models.CharField(_("Name"), max_length=254)
     calories = models.IntegerField(_("Calories"), blank=True)
 
+    @property
+    def slug(self):
+        return slugify(self.name)
+
 
 class Recipe(ArchiveMixin):
     title = models.CharField(_("Title"), max_length=254)
