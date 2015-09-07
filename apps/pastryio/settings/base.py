@@ -35,16 +35,14 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
 )
 
 THIRD_PARTY_APPS = (
-    'haystack',
-    'leaflet',  # for admin view
 )
 
 LOCAL_APPS = (
     'pastryio',
+    'users',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -121,24 +119,24 @@ STATICFILES_FINDERS = (
 
 MEDIA_ROOT = REL("media")
 
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://127.0.0.1:9200/',
-        'INDEX_NAME': 'haystack_pastryio',
-    },
-}
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+#         'URL': 'http://127.0.0.1:9200/',
+#         'INDEX_NAME': 'haystack_pastryio',
+#     },
+# }
 
-# GEOIP
-GEOIP_PATH = REL("geoip/")
+# # GEOIP
+# GEOIP_PATH = REL("geoip/")
 
-# GUI mapping
+# # GUI mapping
 
-LEAFLET_CONFIG = {
-    'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46),
-    'DEFAULT_CENTER': (6.0, 45.0),
-    'DEFAULT_ZOOM': 16,
-    'MIN_ZOOM': 3,
-    'MAX_ZOOM': 18,
-    'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-}
+# LEAFLET_CONFIG = {
+#     'SPATIAL_EXTENT': (5.0, 44.0, 7.5, 46),
+#     'DEFAULT_CENTER': (6.0, 45.0),
+#     'DEFAULT_ZOOM': 16,
+#     'MIN_ZOOM': 3,
+#     'MAX_ZOOM': 18,
+#     'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+# }
