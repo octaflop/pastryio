@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block navcontent %}
+  <li><a href="{% url 'nearme:index' %}">Near Me Demos</a></li>
+{% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="span-col-12">
+    <div id="map"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
