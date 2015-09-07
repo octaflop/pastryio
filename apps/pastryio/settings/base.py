@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'pastryio',
     'profiles',
+    'recipes'
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

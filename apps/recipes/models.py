@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 
 from pastryio.models.mixins import ArchiveMixin
-from users.models import BaseProfile
+from profiles.models import BaseProfile
 
 
 class Ingredient(ArchiveMixin):

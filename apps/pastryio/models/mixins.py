@@ -1,6 +1,6 @@
 import datetime
 from django.db import models
-from pastry.models import managers
+from pastryio.models import managers
 
 
 class ArchiveMixin(models.Model):
