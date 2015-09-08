@@ -9,7 +9,7 @@ from profiles.models import BaseProfile
 
 class Ingredient(ArchiveMixin):
     name = models.CharField(_("Name"), max_length=254)
-    calories = models.IntegerField(_("Calories"), blank=True)
+    calories = models.IntegerField(_("Calories"), blank=True, default=0)
 
     @property
     def slug(self):

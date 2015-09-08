@@ -1,7 +1,7 @@
 import datetime
 from django.db import models
 from pastryio.models import managers
-from django.utils.http import int_to_base36
+from pastryio.utils import int_to_b64
 
 
 class ArchiveMixin(models.Model):
@@ -19,7 +19,7 @@ class ArchiveMixin(models.Model):
 
     ArchiveModel.objects.deleted.all()
     """
-    b36id = models.CharField(max_length=254, blank=True, unique=True)
+    b64id = models.CharField(max_length=2047, blank=True, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
@@ -32,7 +32,7 @@ class ArchiveMixin(models.Model):
 
     def save(self, *args, **kwargs):
         super(ArchiveMixin, self).save(*args, **kwargs)
-        self.b36id = int_to_base36(self.pk)
+        self.b64id = int_to_b64(self.pk)
         super(ArchiveMixin, self).save(*args, **kwargs)
 
     def delete(self, using=None):
