@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^$', 'pastryio.views.front.index', name='index'),
-    url(r'^profile/', include('profiles.urls', namespace='profiles')),
+    url(r'^profiles/', include('profiles.urls', namespace='profiles')),
 
     url(r'^admin/', include(admin.site.urls)),
 ] + staticfiles_urlpatterns()
