@@ -25,4 +25,4 @@ def _quick_test(length):
 
 def _benchmark():
     import timeit
-    print(timeit.timeit("_quick_test(10000)", setup="from __main__ import _quick_test"), number=5)
+    print(timeit.timeit("_quick_test(10000)", setup="from __main__ import _quick_test", number=5))
