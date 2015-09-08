@@ -1,17 +1,17 @@
 from django.conf.urls import url, include
 
-from recipes.views.api import IngredientCreateReadView, IngredientReadUpdateDeleteView
-from recipes.views.front import index, detail
+from recipes.views import api
+from recipes.views import front
 
 apipatterns = [
     url(
         regex=r"ˆ$",
-        view=IngredientCreateReadView.as_view(),
+        view=api.IngredientCreateReadView.as_view(),
         name="ingredient_rest_api"
     ),
     url(
         regex=r"ˆ(?P<base36>[-\w]+)/$",
-        view=IngredientReadUpdateDeleteView.as_view(),
+        view=api.IngredientReadUpdateDeleteView.as_view(),
         name="ingredient_rest_api"
     )
 ]
@@ -19,21 +19,21 @@ apipatterns = [
 frontpatterns = [
     url(
         regex=r"^$",
-        view=index,
+        view=front.IngredientListView.as_view(),
         name="index"
     ),
-    url(
-        regex=r"^(?P<b36id>\w+)$",
-        view=detail,
-        name="detail"
-    ),
+    # url(
+    #     regex=r"^(?P<b36id>\w+)$",
+    #     view=detail,
+    #     name="detail"
+    # ),
 ]
 
 urlpatterns = [
     url(
-        r"^", include(apipatterns, namespace="api")
+        r"^", include(frontpatterns, namespace="front")
     ),
     url(
-        r"^api/", include(frontpatterns, namespace="front")
+        r"^api/", include(apipatterns, namespace="api")
     ),
 ]
