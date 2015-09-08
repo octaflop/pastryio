@@ -5,8 +5,10 @@ from django.contrib.auth.models import (
     User
 )
 
+from pastryio.models.mixins import ArchiveMixin
 
-class BaseProfile(models.Model):
+
+class BaseProfile(ArchiveMixin):
     user = models.OneToOneField(User)
     avatar = models.ImageField(_("avatar"), blank=True)
 

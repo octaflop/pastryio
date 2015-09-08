@@ -35,7 +35,6 @@ class ArchiveMixin(models.Model):
         self.b36id = int_to_base36(self.pk)
         super(ArchiveMixin, self).save(*args, **kwargs)
 
-
     def delete(self, using=None):
         from django.db import router
         from django.db.models import signals
