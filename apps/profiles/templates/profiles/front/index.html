@@ -7,7 +7,12 @@
 {% block content %}
 <div class="row">
   <div class="span-col-12">
-    <div id="map"></div>
+    {% for bp in bps %}
+    <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}">
+      {{ bp.user.first_name }}
+      <img src="{{ bp.avatar.url }}" alt="{{ bp.user.first_name }}" />
+    </a>
+  {% endfor %}
   </div>
 </div>
 {% endblock %}
