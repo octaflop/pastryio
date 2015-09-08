@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block navcontent %}
+  {# <li><a href="{% url 'recipes:front:index' %}">Recipes</a></li> #}
+  <li><a href="{% url 'profiles:front:index' %}">Chefs</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="span-col-12">
+    {% for recipe in recipes %}
+    <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}">
+      {{ recipe.title }}
+      <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}" />
+    </a>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
