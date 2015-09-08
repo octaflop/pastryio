@@ -7,11 +7,11 @@
 {% block content %}
 <div class="row">
   <div class="span-col-12">
-    {% for recipe in recipes %}
-    <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}">
-      {{ recipe.title }}
-      <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}" />
-    </a>
+    {% for ingredient in ingredients %}
+    {# <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}"> #}
+      {{ ingredient.name }}
+      {# <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}" /> #}
+    {# </a> #}
   {% endfor %}
   </div>
 </div>
