@@ -19,7 +19,7 @@ class ArchiveMixin(models.Model):
 
     ArchiveModel.objects.deleted.all()
     """
-    b64id = models.CharField(max_length=2047, blank=True, unique=True)
+    b64id = models.CharField(max_length=1023, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
@@ -32,7 +32,9 @@ class ArchiveMixin(models.Model):
 
     def save(self, *args, **kwargs):
         super(ArchiveMixin, self).save(*args, **kwargs)
+        print(self.pk)
         self.b64id = int_to_b64(self.pk)
+        print(self.b64id)
         super(ArchiveMixin, self).save(*args, **kwargs)
 
     def delete(self, using=None):
