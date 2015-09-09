@@ -8,9 +8,9 @@
 <div class="row">
   <div class="span-col-12">
     {% for bp in bps %}
-    <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}">
+    <a href="{% url 'profiles:front:detail' b64id=bp.b64id slug=bp.slug %}">
       {{ bp.user.first_name }}
-      <img src="{{ bp.avatar.url }}" alt="{{ bp.user.first_name }}" />
+      <img src="{{ bp.avatar.url }}" alt="{{ bp.user.first_name }}" width=200 />
     </a>
   {% endfor %}
   </div>

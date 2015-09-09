@@ -9,7 +9,7 @@ frontpatterns = [
         name="index"
     ),
     url(
-        regex=r"^(?P<b36id>\w+)$",
+        regex=r"^(?P<b64id>\w+)/(?P<slug>\w+)$",
         view=detail,
         name="detail"
     ),

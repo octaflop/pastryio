@@ -14,9 +14,9 @@ def index(request):
 
 
 @require_safe
-def detail(request, b36id):
+def detail(request, b64id, slug):
     ctx = {}
-    bp = get_object_or_404(BaseProfile, b36id=b36id)
+    bp = get_object_or_404(BaseProfile, b64id=b64id)
     ctx['bp'] = bp
     template_name = "profiles/front/detail.html"
     return render(request, template_name, ctx)

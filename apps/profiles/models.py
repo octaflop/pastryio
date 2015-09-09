@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.text import slugify
 
 from django.contrib.auth.models import (
     User
@@ -14,3 +15,7 @@ class BaseProfile(ArchiveMixin):
 
     def __unicode__(self):
         return self.user.username
+
+    @property
+    def slug(self):
+        return slugify(self.user.first_name)
