@@ -10,7 +10,7 @@ apipatterns = [
         name="ingredient_rest_api"
     ),
     url(
-        regex=r"ˆ(?P<base36>[-\w]+)/$",
+        regex=r"ˆ(?P<b64id>[-\w]+)/(?P<slug>[-\w]+)$",
         view=api.IngredientReadUpdateDeleteView.as_view(),
         name="ingredient_rest_api"
     )
@@ -22,11 +22,11 @@ frontpatterns = [
         view=front.IngredientListView.as_view(),
         name="index"
     ),
-    # url(
-    #     regex=r"^(?P<b36id>\w+)$",
-    #     view=detail,
-    #     name="detail"
-    # ),
+    url(
+        regex=r"(?P<b64id>[-\w]+)/(?P<slug>[-\w]+)",
+        view=front.IngredientDetailView.as_view(),
+        name="detail"
+    ),
 ]
 
 urlpatterns = [

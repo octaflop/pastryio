@@ -8,10 +8,9 @@
 <div class="row">
   <div class="span-col-12">
     {% for ingredient in ingredients %}
-    {# <a href="{% url 'profiles:front:detail' b36id=bp.b36id %}"> #}
+    <a href="{% url 'recipes:front:detail' b64id=ingredient.b64id  slug=ingredient.slug %}">
       {{ ingredient.name }}
-      {# <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}" /> #}
-    {# </a> #}
+    </a>
   {% endfor %}
   </div>
 </div>
