@@ -38,12 +38,14 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'channels',
 )
 
 LOCAL_APPS = (
     'pastryio',
     'profiles',
-    'recipes'
+    'recipes',
+    'blog'
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
