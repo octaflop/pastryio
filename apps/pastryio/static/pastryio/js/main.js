@@ -3,7 +3,7 @@
 angular.module("pastryio", ['ngWebSocket'])
   .factory('wsData', function($websocket) {
     // Open a WebSocket connection
-    var dataStream = $websocket('wss://127.0.0.1/');
+    var dataStream = $websocket('wss://127.0.0.1:9000/');
 
     var collection = [];
 
