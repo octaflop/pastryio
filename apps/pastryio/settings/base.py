@@ -85,8 +85,8 @@ CHANNEL_BACKENDS = {
     "default": {
         "BACKEND": "channels.backends.database.DatabaseChannelBackend",
         "ROUTING": {
-            "websocket.connect": "blog.consumers.ws_add",
-            "websocket.keepalive": "blog.consumers.ws_add",
+            "websocket.connect": "blog.consumers.ws_connect",
+            "websocket.keepalive": "blog.consumers.ws_keepalive",
             "websocket.receive": "blog.consumers.ws_message",
             "websocket.disconnect": "blog.consumers.ws_disconnect",
         },

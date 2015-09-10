@@ -14,7 +14,7 @@ def ws_connect(message):
 
 # Connected to websocket.keepalive
 @channel_session
-def ws_add(message):
+def ws_keepalive(message):
     Group("chat-{}".format(message.channel_session['room'])).add(message.reply_channel)
 
 
