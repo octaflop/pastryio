@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^$', 'pastryio.views.front.index', name='index'),
     url(r'^recipes/', include('recipes.urls', namespace='recipes')),
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
 
     url(r'^admin/', include(admin.site.urls)),
 ]
