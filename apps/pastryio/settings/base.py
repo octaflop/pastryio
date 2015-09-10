@@ -80,6 +80,18 @@ TEMPLATES = [
     },
 ]
 
+
+CHANNEL_BACKENDS = {
+    "default": {
+        "BACKEND": "channels.backends.database.DatabaseChannelBackend",
+        "ROUTING": {
+            "websocket.connect": "blog.consumers.ws_add",
+            "websocket.keepalive": "blog.consumers.ws_keepalive",
+            "websocket.disconnect": "blog.consumers.ws_disconnect",
+        },
+    },
+}
+
 WSGI_APPLICATION = 'pastryio.wsgi.application'
 
 
