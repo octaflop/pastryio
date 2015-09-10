@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("pastryio", ['ngWebSocket'])
-  .factory('MyData', function($websocket) {
+  .factory('wsData', function($websocket) {
     // Open a WebSocket connection
     var dataStream = $websocket('wss://127.0.0.1/');
 
@@ -20,7 +20,8 @@ angular.module("pastryio", ['ngWebSocket'])
 
     return methods;
   })
-  .controller('BlogCtrl', function BlogCtrl($http){
+  .controller('BlogCtrl', function BlogCtrl(wsData){
     var blog = this;
 
+    blog.wsData = wsData;
   });
