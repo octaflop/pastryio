@@ -13,9 +13,9 @@
     <ul>
       <li ng-repeat="log in blog.logs">
         {{ log.content }}
+        {{ log|json }}
       </li>
     </ul>
-      {# {{ blog.logs }} #}
 
       <textarea name="msg" id="" cols="30" rows="10" ng-model="blog.msg">
       </textarea>
