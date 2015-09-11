@@ -10,6 +10,7 @@ def ws_connect(message):
     # Save room in session and add us to the group
     message.channel_session['room'] = room
     Group("chat-{}".format(room)).add(message.reply_channel)
+    print(message.reply_channel)
 
 
 # Connected to websocket.keepalive
@@ -21,6 +22,7 @@ def ws_keepalive(message):
 # Connected to websocket.receive
 @channel_session
 def ws_message(message):
+    print(message.content)
     Group("chat-{}".format(message.channel_session['room'])).send(message.content)
 
 
