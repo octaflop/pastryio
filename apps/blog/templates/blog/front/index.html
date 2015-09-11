@@ -10,6 +10,12 @@
   <div class="span-col-12">
     <div class="messages" ng-controller="BlogCtrl as blog" ng-cloak>
       {{ blog.wsData }}
+
+      <textarea name="msg" id="" cols="30" rows="10" ng-model="blog.msg">
+      </textarea>
+      <button class="btn btn-info" ng-click="blog.sendClicked()">
+        Send Message
+      </button>
     </div>
   </div>
 </div>
