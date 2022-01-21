@@ -1,7 +1,7 @@
 Django==1.8.4
 django-haystack==2.4.0
 geopy==1.10.0
-ipython==3.2.1
+ipython==7.16.3
 psycopg2==2.6.1
 python-ptrace==0.8.1
 urllib3==1.11
